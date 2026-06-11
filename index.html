@@ -64,10 +64,20 @@
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             padding: 0 10%;
             z-index: 1000;
+        }
+
+        nav .nav-logo {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(to right, #ffffff, var(--neon-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
         }
 
         nav .nav-links {
@@ -606,8 +616,14 @@
         }
 
         @media (max-width: 768px) {
-            nav .nav-links {
+            nav {
+                justify-content: center;
+            }
+            nav .nav-logo {
                 display: none;
+            }
+            nav .nav-links {
+                gap: 15px;
             }
             section {
                 padding: 60px 6% 20px 6%;
@@ -623,6 +639,7 @@
 <body>
 
     <nav>
+        <a href="#" class="nav-logo">Himanshu Tripathi</a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -636,7 +653,7 @@
 
     <header>
         <h1>Himanshu Tripathi</h1>
-        <p><span>Full Stack Developer</span> | Specializing in MERN Stack & AI/ML Development</p>
+        <p><span>Full Stack Web Developer</span> | Architecting High-Performance MERN Applications & AI/ML Features</p>
         <div class="hero-buttons">
             <a href="#contact" class="btn btn-primary">Contact Me</a>
             <a href="./himanshu_resume_v3.pdf" target="_blank" class="btn btn-secondary">👁️ View Resume</a>
@@ -650,8 +667,8 @@
             <p>Applications Developed</p>
         </div>
         <div class="stat-box" style="border-color: var(--border-glow);">
-            <h4>MERN + AI/ML</h4>
-            <p>Core Expertise Stack</p>
+            <h4>MERN Stack</h4>
+            <p>Core Engineering Focus</p>
         </div>
         <div class="stat-box">
             <h4>6+</h4>
@@ -663,11 +680,11 @@
         <h2>About Me</h2>
         <div class="glass-card">
             <p style="font-size: 16px; line-height: 1.8; color: #cbd5e1; text-align: justify;">
-                I am a business-focused computer science engineering undergraduate specializing in 
-                <strong>Artificial Intelligence and Data Science</strong> at the Greater Noida Institute of Technology. 
-                My primary expertise centers on designing scalable full-stack applications using the MERN architecture, backed by solid database logic and optimized caching mechanisms. 
-                With corporate development internship exposure under my belt, I focus on engineering robust server controllers, handling structured asynchronous APIs, and resolving production bottlenecks. 
-                Driven by a deep passion for modern system automation, I specialize in embedding machine learning capabilities, designing Convolutional Neural Network blueprints for technical analysis, and implementing precise computational logic to turn complex backend pipelines into dynamic responsive frameworks.
+                I am a business-focused computer science engineering student specializing in 
+                <strong>Artificial Intelligence and Data Science</strong> at Greater Noida Institute of Technology. 
+                My core professional focus is completely locked onto advanced full-stack web engineering, leveraging the MERN architecture to build production-grade web frameworks, async multi-thread API controllers, and secure user data streams. 
+                With practical corporate development internship exposure under my belt, I focus heavily on solid software engineering principles—optimizing relational/non-relational database queries, managing transactional Redis cache layers, and handling containerized environments deployment pipelines. 
+                As a natural extension to my core development systems, I selectively integrate practical backend configurations and data-driven Machine Learning features to maximize cloud infrastructure capabilities and application performance.
             </p>
         </div>
     </section>
@@ -718,11 +735,11 @@
             </div>
 
             <div class="skill-category">
-                <h3>Intelligent Systems</h3>
+                <h3>System Tooling</h3>
                 <div class="skill-tags">
-                    <span class="skill-badge">Artificial Intelligence</span>
-                    <span class="skill-badge">LangChain / Gemini API</span>
-                    <span class="skill-badge">Neural Networks (CNN)</span>
+                    <span class="skill-badge">Automated Pipelines</span>
+                    <span class="skill-badge">Machine Learning Features</span>
+                    <span class="skill-badge">Data Optimization</span>
                 </div>
             </div>
 
@@ -773,7 +790,7 @@
         
         <div class="filter-container">
             <button class="filter-btn active" onclick="filterProjects('all')">All System Architecture</button>
-            <button class="filter-btn" onclick="filterProjects('ai')">Artificial Intelligence (AI)</button>
+            <button class="filter-btn" onclick="filterProjects('ai')">Machine Learning & Automation</button>
             <button class="filter-btn" onclick="filterProjects('mern')">Full Stack MERN</button>
         </div>
 
@@ -866,7 +883,7 @@
             <div class="activity-details">
                 <h3>Student Coordinator – Sports Event</h3>
                 <p style="color: var(--neon-glow); font-weight: 500; font-size: 14px; margin-bottom: 6px;">AI & DS Department, GNIOT</p>
-                <p>Represented the AI & DS department inside <strong>Spardha</strong> (The Annual Sports Meet). Successfully steered operational team collaborations, managed scheduling frameworks, and fostered elite collective alignment and sportsmanship across technical branches.</p>
+                <p>Represented the AI & DS department inside <strong>Spardha</strong> (The Annual Sports Meet). Successfully steered operational team collaborations, managed scheduling frameworks, and fostered elite collective alignment across technical branches.</p>
             </div>
         </div>
     </section>
@@ -904,11 +921,11 @@
     <script>
         const projects = [
             {
-                name: "🎙️ AI Multimedia Q&A Platform",
-                description: "Full-stack AI workspace processing PDFs, audio, video transcripts (Whisper), and intelligent RAG chat workflows utilizing FAISS and Gemini models.",
+                name: "🎙️ Multimedia Analytics Platform",
+                description: "Full-stack application processing PDFs, audio, and video transcripts (Whisper), with indexing and intelligent chat pipelines utilizing FAISS vector searching.",
                 link: "https://github.com/tripathihimanshu252",
                 category: "ai",
-                tags: ["Gemini API", "FAISS", "RAG"]
+                tags: ["Data Engineering", "FAISS", "Vector Search"]
             },
             {
                 name: "🍳 Recipe Recommendation System",
@@ -919,10 +936,10 @@
             },
             {
                 name: "DocMint",
-                description: "Production-ready Next.js platform integrated with advanced AI processing capabilities for document indexing.",
+                description: "Production-ready Next.js platform integrated with advanced system indexing models for document analysis.",
                 link: "https://www.docmint.online/",
                 category: "ai",
-                tags: ["Next.js", "AI Indexing", "Cloud"]
+                tags: ["Next.js", "System Indexing", "Cloud"]
             },
             {
                 name: "Heal In India",
@@ -932,11 +949,11 @@
                 tags: ["MERN", "JWT", "REST API"]
             },
             {
-                name: "Rice Disease Detection",
-                description: "Artificial Intelligence model performing CNN predictions embedded smoothly into optimized React interfaces.",
+                name: "Production Image Analytics",
+                description: "Defect analysis data system utilizing advanced automated pattern predictions embedded smoothly into optimized React interfaces.",
                 link: "https://rice-disease-detection-frontend.vercel.app/",
                 category: "ai",
-                tags: ["CNN Model", "React", "Python"]
+                tags: ["Machine Learning", "React", "Python"]
             },
             {
                 name: "Personal Finance Tracker",
@@ -947,10 +964,10 @@
             },
             {
                 name: "Advanced Voice Assistant",
-                description: "AI-integrated voice execution pipelines running hands-free commands using MERN stack and Web Speech systems.",
+                description: "System engineering voice execution pipelines running hands-free commands using MERN stack and Web Speech systems.",
                 link: "https://github.com/tripathihimanshu252/Advanced-voice-assistant-using-mern",
                 category: "ai",
-                tags: ["Web Speech API", "Gemini", "Node.js"]
+                tags: ["Web Speech API", "API Integration", "Node.js"]
             }
         ];
 
