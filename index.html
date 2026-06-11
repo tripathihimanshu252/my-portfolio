@@ -15,6 +15,8 @@
             --purple-accent: #a855f7;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
+            --success-glow: rgba(16, 185, 129, 0.2);
+            --emerald: #10b981;
         }
 
         * {
@@ -32,6 +34,7 @@
             background-image: 
                 radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 40%),
                 radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.05) 0%, transparent 40%);
+            padding-top: 70px;
         }
 
         /* SCROLLBAR CUSTOMIZATION */
@@ -49,15 +52,51 @@
             background: var(--electric-blue);
         }
 
+        /* STICKY NAVIGATION BAR */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background: rgba(9, 13, 22, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10%;
+            z-index: 1000;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav .nav-links a:hover {
+            color: var(--neon-glow);
+        }
+
         /* HERO SECTION */
         header {
-            min-height: 85vh;
+            min-height: 75vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 40px 20px;
+            padding: 40px 20px 20px 20px;
             position: relative;
         }
 
@@ -72,7 +111,7 @@
         }
 
         header p {
-            font-size: clamp(18px, 3vw, 24px);
+            font-size: clamp(18px, 3vw, 22px);
             color: var(--text-muted);
             max-width: 750px;
             margin-bottom: 30px;
@@ -98,7 +137,7 @@
             font-size: 15px;
             font-weight: 600;
             border-radius: 50px;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
         }
 
@@ -124,11 +163,77 @@
             background: rgba(255, 255, 255, 0.1);
             border-color: var(--neon-glow);
             transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+        }
+
+        /* QUICK HR INSIGHT STATS */
+        .hr-quick-stats {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto 50px auto;
+            padding: 0 10%;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.3), rgba(15, 23, 42, 0.5));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 180px;
+            flex: 1;
+        }
+
+        .stat-box h4 {
+            font-size: 26px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--neon-glow), var(--purple-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-box p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROJECT FILTERING TABS */
+        .filter-container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: var(--neon-glow);
+            color: white;
         }
 
         /* SECTION COMMON STYLES */
         section {
-            padding: 80px 10%;
+            padding: 80px 10% 20px 10%;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -234,6 +339,22 @@
             min-height: 65px;
         }
 
+        .project-meta-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .project-tag {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 3px 10px;
+            font-size: 11px;
+            border-radius: 4px;
+            color: var(--text-muted);
+        }
+
         .project-link {
             text-decoration: none;
             color: var(--neon-glow);
@@ -261,19 +382,6 @@
         .exp-content {
             flex: 1;
             min-width: 300px;
-        }
-
-        .exp-certificate-sidebar {
-            width: 260px;
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
 
         .exp-header {
@@ -305,6 +413,19 @@
             border-radius: 20px;
             font-size: 13px;
             font-weight: 600;
+        }
+
+        .exp-certificate-sidebar {
+            width: 260px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .experience ul {
@@ -344,6 +465,11 @@
             color: #ef4444;
             font-weight: bold;
             border: 1px dashed rgba(239, 68, 68, 0.4);
+            width: 90px;
+            height: 90px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            background: #111827;
         }
         .pdf-placeholder span {
             font-size: 10px;
@@ -393,6 +519,31 @@
 
         .doc-btn:hover {
             background: #1d4ed8;
+        }
+
+        /* EXTRACURRICULAR ACTIVITIES SECTION */
+        .activity-box {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .activity-icon {
+            font-size: 36px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 15px;
+            border-radius: 12px;
+            color: var(--emerald);
+        }
+        .activity-details h3 {
+            font-size: 20px;
+            color: white;
+            margin-bottom: 4px;
+        }
+        .activity-details p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
         }
 
         /* CONTACT SECTION */
@@ -455,26 +606,37 @@
         }
 
         @media (max-width: 768px) {
-            section {
-                padding: 60px 6%;
+            nav .nav-links {
+                display: none;
             }
-            .media-card {
+            section {
+                padding: 60px 6% 20px 6%;
+            }
+            .media-card, .activity-box {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 15px;
-            }
-            .media-preview {
-                width: 70px;
-                height: 70px;
             }
         }
     </style>
 </head>
 <body>
 
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <header>
         <h1>Himanshu Tripathi</h1>
-        <p><span>Full Stack Developer</span> | Building Web Architectures using MERN & AI</p>
+        <p><span>Full Stack Developer</span> | Specializing in MERN Stack & AI/ML Development</p>
         <div class="hero-buttons">
             <a href="#contact" class="btn btn-primary">Contact Me</a>
             <a href="./himanshu_resume_v3.pdf" target="_blank" class="btn btn-secondary">👁️ View Resume</a>
@@ -482,14 +644,30 @@
         </div>
     </header>
 
+    <div class="hr-quick-stats">
+        <div class="stat-box">
+            <h4>10+</h4>
+            <p>Applications Developed</p>
+        </div>
+        <div class="stat-box" style="border-color: var(--border-glow);">
+            <h4>MERN + AI/ML</h4>
+            <p>Core Expertise Stack</p>
+        </div>
+        <div class="stat-box">
+            <h4>6+</h4>
+            <p>Global Certifications</p>
+        </div>
+    </div>
+
     <section id="about">
         <h2>About Me</h2>
         <div class="glass-card">
-            <p style="font-size: 16px; line-height: 1.8; color: #cbd5e1;">
-                I am a business-focused Bachelor of Technology student specializing in 
-                <strong>Artificial Intelligence and Data Science</strong> at Greater Noida Institute of Technology. 
-                As an expert <strong>Full Stack Developer (MERN & AI)</strong> with corporate internship experience, 
-                I master the creation of production-ready full-stack software systems, clean API structures, and embed intelligent AI tools into scalable modern web layouts.
+            <p style="font-size: 16px; line-height: 1.8; color: #cbd5e1; text-align: justify;">
+                I am a business-focused computer science engineering undergraduate specializing in 
+                <strong>Artificial Intelligence and Data Science</strong> at the Greater Noida Institute of Technology. 
+                My primary expertise centers on designing scalable full-stack applications using the MERN architecture, backed by solid database logic and optimized caching mechanisms. 
+                With corporate development internship exposure under my belt, I focus on engineering robust server controllers, handling structured asynchronous APIs, and resolving production bottlenecks. 
+                Driven by a deep passion for modern system automation, I specialize in embedding machine learning capabilities, designing Convolutional Neural Network blueprints for technical analysis, and implementing precise computational logic to turn complex backend pipelines into dynamic responsive frameworks.
             </p>
         </div>
     </section>
@@ -581,7 +759,7 @@
                 </div>
                 
                 <div class="exp-certificate-sidebar">
-                    <div class="pdf-placeholder" style="width: 70px; height: 70px; border-radius: 8px; margin-bottom: 12px;">PDF<span>AGR</span></div>
+                    <div class="pdf-placeholder" style="margin-bottom: 12px;">PDF<span>AGR</span></div>
                     <h4 style="font-size: 15px; margin-bottom: 6px; color: white;">Tenure Certificate</h4>
                     <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 15px;">Verified internship completion record issued by Agratas.</p>
                     <a href="intern_may.pdf" target="_blank" class="doc-btn" style="width: 100%; text-align: center;">View Certificate</a>
@@ -592,58 +770,22 @@
 
     <section id="projects">
         <h2>Featured Projects</h2>
+        
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterProjects('all')">All System Architecture</button>
+            <button class="filter-btn" onclick="filterProjects('ai')">Artificial Intelligence (AI)</button>
+            <button class="filter-btn" onclick="filterProjects('mern')">Full Stack MERN</button>
+        </div>
+
         <div id="project-container" class="cards-grid"></div>
     </section>
 
-    <section id="achievements">
-        <h2>Key Achievements</h2>
-        <div class="cards-grid">
-            
-            <div class="glass-card media-card">
-                <img src="Student Of Semester - CSDC.jpeg" alt="Student of Semester" class="media-preview">
-                <div class="media-info">
-                    <h3>🏆 Student of Semester (Grade A+)</h3>
-                    <p>Awarded by Corporate Skill Development Centre (CSDC), GNIOT for absolute academic excellence and stellar involvement during the 5th Semester.</p>
-                    <div class="media-meta">
-                        <span class="media-date">June 2025</span>
-                        <a href="Student Of Semester - CSDC.jpeg" target="_blank" class="doc-btn">View Image</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="glass-card media-card">
-                <img src="Techclasher Hackathon.jpeg" alt="Techclasher Hackathon" class="media-preview">
-                <div class="media-info">
-                    <h3>Hackathon: The Techclasher</h3>
-                    <p>Successfully participated and competed in the grand IT Hackathon event organized by GNIOT Engineering College as a primary member of Team Webhackthon.</p>
-                    <div class="media-meta">
-                        <span class="media-date">October 2025</span>
-                        <a href="Techclasher Hackathon.jpeg" target="_blank" class="doc-btn">View Image</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="glass-card media-card">
-                <div class="media-preview pdf-placeholder">PDF<span>TVS</span></div>
-                <div class="media-info">
-                    <h3>TVS Credit EPIC 7.0</h3>
-                    <p>National level technical corporate challenge. Commended certificate for core performance and active participation in the nationwide TVS Credit IT Track.</p>
-                    <div class="media-meta">
-                        <span class="media-date">September 2025</span>
-                        <a href="TVS Hackathon.pdf" target="_blank" class="doc-btn">View PDF</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
     <section id="certifications">
-        <h2>Professional Certifications</h2>
+        <h2>Professional Certifications & Highlights</h2>
         <div class="cards-grid">
 
             <div class="glass-card media-card">
-                <div class="media-preview pdf-placeholder">PDF<span>IITK</span></div>
+                <div class="pdf-placeholder">PDF<span>IITK</span></div>
                 <div class="media-info">
                     <h3>Data Structures and Algorithms</h3>
                     <p>E & ICT Academy, IIT Kanpur. Rigorous engineering student development track covering performance optimizations.</p>
@@ -655,7 +797,7 @@
             </div>
 
             <div class="glass-card media-card">
-                <div class="media-preview pdf-placeholder">PDF<span>IITK</span></div>
+                <div class="pdf-placeholder">PDF<span>IITK</span></div>
                 <div class="media-info">
                     <h3>Full Stack Web Development</h3>
                     <p>E & ICT Academy, IIT Kanpur. In-depth professional development program covering comprehensive full-stack workflows.</p>
@@ -667,7 +809,7 @@
             </div>
 
             <div class="glass-card media-card">
-                <div class="media-preview pdf-placeholder">PDF<span>INFY</span></div>
+                <div class="pdf-placeholder">PDF<span>INFY</span></div>
                 <div class="media-info">
                     <h3>DSA using Java</h3>
                     <p>Infosys Springboard. Verified course credential demonstrating object-oriented algorithms design implementations in Java.</p>
@@ -682,7 +824,7 @@
                 <img src="Data Analytics Job Simulation - Delloitte.jpeg" alt="Deloitte Simulation" class="media-preview">
                 <div class="media-info">
                     <h3>Data Analytics Job Simulation</h3>
-                    <p>Deloitte (Forage platform). Immersive engineering simulation mapping complex analytics data methods and forensic systems.</p>
+                    <p>Deloitte (Forage platform). Immersive engineering simulation mapping complex analytics data methods.</p>
                     <div class="media-meta">
                         <span class="media-date">July 2025</span>
                         <a href="Data Analytics Job Simulation - Delloitte.jpeg" target="_blank" class="doc-btn">View Image</a>
@@ -691,41 +833,41 @@
             </div>
 
             <div class="glass-card media-card">
-                <div class="media-preview pdf-placeholder">PDF<span>IITK</span></div>
+                <img src="Student Of Semester - CSDC.jpeg" alt="Student of Semester" class="media-preview">
                 <div class="media-info">
-                    <h3>C & C++ Programming</h3>
-                    <p>E & ICT Academy, IIT Kanpur. Deep procedural foundations and low-level object management program specification.</p>
+                    <h3>🏆 Student of Semester (Grade A+)</h3>
+                    <p>Awarded by Corporate Skill Development Centre (CSDC), GNIOT for absolute academic excellence during 5th Semester.</p>
                     <div class="media-meta">
-                        <span class="media-date">December 2024</span>
-                        <a href="C & C++ Programming.pdf" target="_blank" class="doc-btn">View PDF</a>
+                        <span class="media-date">June 2025</span>
+                        <a href="Student Of Semester - CSDC.jpeg" target="_blank" class="doc-btn">View Image</a>
                     </div>
                 </div>
             </div>
 
             <div class="glass-card media-card">
-                <div class="media-preview pdf-placeholder">PDF<span>SQL</span></div>
+                <img src="Techclasher Hackathon.jpeg" alt="Techclasher Hackathon" class="media-preview">
                 <div class="media-info">
-                    <h3>Introduction to SQL</h3>
-                    <p>Simplilearn SkillUp program. Relational system logic, declarative database structuring, and index optimizations.</p>
+                    <h3>Hackathon: The Techclasher</h3>
+                    <p>Successfully competed in the grand IT Hackathon event organized by GNIOT Engineering College with Team Webhackthon.</p>
                     <div class="media-meta">
-                        <span class="media-date">July 2025</span>
-                        <a href="SQL- simplilearn.pdf" target="_blank" class="doc-btn">View PDF</a>
+                        <span class="media-date">October 2025</span>
+                        <a href="Techclasher Hackathon.jpeg" target="_blank" class="doc-btn">View Image</a>
                     </div>
                 </div>
             </div>
 
-            <div class="glass-card media-card">
-                <img src="React Bootcamp.jpeg" alt="React Bootcamp" class="media-preview">
-                <div class="media-info">
-                    <h3>React Project Bootcamp</h3>
-                    <p>SkillEcted Campus webinar certification. Real-time implementation mechanics focused on stateful structural systems.</p>
-                    <div class="media-meta">
-                        <span class="media-date">August 2025</span>
-                        <a href="React Bootcamp.jpeg" target="_blank" class="doc-btn">View Image</a>
-                    </div>
-                </div>
-            </div>
+        </div>
+    </section>
 
+    <section id="activities">
+        <h2>Extracurricular Activities</h2>
+        <div class="glass-card activity-box">
+            <div class="activity-icon">🏆</div>
+            <div class="activity-details">
+                <h3>Student Coordinator – Sports Event</h3>
+                <p style="color: var(--neon-glow); font-weight: 500; font-size: 14px; margin-bottom: 6px;">AI & DS Department, GNIOT</p>
+                <p>Represented the AI & DS department inside <strong>Spardha</strong> (The Annual Sports Meet). Successfully steered operational team collaborations, managed scheduling frameworks, and fostered elite collective alignment and sportsmanship across technical branches.</p>
+            </div>
         </div>
     </section>
 
@@ -764,66 +906,87 @@
             {
                 name: "🎙️ AI Multimedia Q&A Platform",
                 description: "Full-stack AI workspace processing PDFs, audio, video transcripts (Whisper), and intelligent RAG chat workflows utilizing FAISS and Gemini models.",
-                link: "https://github.com/tripathihimanshu252"
+                link: "https://github.com/tripathihimanshu252",
+                category: "ai",
+                tags: ["Gemini API", "FAISS", "RAG"]
             },
             {
                 name: "🍳 Recipe Recommendation System",
                 description: "Modern, responsive React dynamic application integrated seamlessly with TheMealDB API endpoints to stream recipe structures filtering by demographics.",
-                link: "https://recipicks.vercel.app/"
+                link: "https://recipicks.vercel.app/",
+                category: "mern",
+                tags: ["React", "API", "Bootstrap"]
             },
             {
                 name: "DocMint",
                 description: "Production-ready Next.js platform integrated with advanced AI processing capabilities for document indexing.",
-                link: "https://www.docmint.online/"
+                link: "https://www.docmint.online/",
+                category: "ai",
+                tags: ["Next.js", "AI Indexing", "Cloud"]
             },
             {
                 name: "Heal In India",
                 description: "Full Stack MERN platform for managing digital healthcare workflows and premium service provisions.",
-                link: "https://healinindia-frontend.vercel.app/"
+                link: "https://healinindia-frontend.vercel.app/",
+                category: "mern",
+                tags: ["MERN", "JWT", "REST API"]
             },
             {
                 name: "Rice Disease Detection",
                 description: "Artificial Intelligence model performing CNN predictions embedded smoothly into optimized React interfaces.",
-                link: "https://rice-disease-detection-frontend.vercel.app/"
+                link: "https://rice-disease-detection-frontend.vercel.app/",
+                category: "ai",
+                tags: ["CNN Model", "React", "Python"]
             },
             {
                 name: "Personal Finance Tracker",
                 description: "Secure asset management tracking system engineered with continuous state verification, JWT Auth, and Redis caching.",
-                link: "https://personal-finance-tracker-oe9z14y8n-himahsu-23s-projects.vercel.app/"
+                link: "https://personal-finance-tracker-oe9z14y8n-himahsu-23s-projects.vercel.app/",
+                category: "mern",
+                tags: ["Redis", "PostgreSQL", "MERN"]
             },
             {
                 name: "Advanced Voice Assistant",
                 description: "AI-integrated voice execution pipelines running hands-free commands using MERN stack and Web Speech systems.",
-                link: "https://github.com/tripathihimanshu252/Advanced-voice-assistant-using-mern"
-            },
-            {
-                name: "Currency Converter",
-                description: "A production-grade precise real-time utility converter tracking multiple global live currency exchanges dynamically.",
-                link: "https://appversal.netlify.app/"
-            },
-            {
-                name: "Tic-Tac-Toe Game",
-                description: "An interactive, web-based classic Tic-Tac-Toe game deployed with responsive capabilities and smooth game state animations.",
-                link: "https://melodious-sfogliatella-4080ff.netlify.app/"
-            },
-            {
-                name: "Tinder Clone",
-                description: "Real-time production prototype testing micro-state synchronization over secure Node core clusters.",
-                link: "http://13.235.49.31/"
+                link: "https://github.com/tripathihimanshu252/Advanced-voice-assistant-using-mern",
+                category: "ai",
+                tags: ["Web Speech API", "Gemini", "Node.js"]
             }
         ];
 
-        const container = document.getElementById("project-container");
+        function renderProjects(data) {
+            const container = document.getElementById("project-container");
+            container.innerHTML = "";
+            data.forEach(project => {
+                let tagsHTML = project.tags.map(t => `<span class="project-tag">${t}</span>`).join('');
+                container.innerHTML += `
+                    <div class="glass-card project-card">
+                        <div>
+                            <h3>${project.name}</h3>
+                            <div class="project-meta-tags">${tagsHTML}</div>
+                            <p>${project.description}</p>
+                        </div>
+                        <a href="${project.link}" target="_blank" class="project-link">Launch Project &rarr;</a>
+                    </div>
+                `;
+            });
+        }
 
-        projects.forEach(project => {
-            container.innerHTML += `
-                <div class="glass-card project-card">
-                    <h3>${project.name}</h3>
-                    <p>${project.description}</p>
-                    <a href="${project.link}" target="_blank" class="project-link">Launch Project &rarr;</a>
-                </div>
-            `;
-        });
+        function filterProjects(cat) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if(cat === 'all') {
+                renderProjects(projects);
+            } else {
+                const filtered = projects.filter(p => p.category === cat);
+                renderProjects(filtered);
+            }
+        }
+
+        // Initial run
+        renderProjects(projects);
     </script>
 </body>
 </html>
