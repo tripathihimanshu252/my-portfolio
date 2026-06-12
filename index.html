@@ -82,8 +82,9 @@
 
         nav .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 20px;
             list-style: none;
+            flex-wrap: wrap;
         }
 
         nav .nav-links a {
@@ -611,7 +612,7 @@
             color: #ef4444;
         }
 
-        /* ADVANCED & ROBUST MOBILE RESPONSIVENESS MEDIA QUERIES */
+        /* ADVANCED & FLUID MOBILE RESPONSIVENESS MEDIA QUERIES */
         @media (max-width: 1024px) {
             section {
                 padding: 60px 5% 20px 5%;
@@ -636,50 +637,62 @@
                 padding-top: 60px;
             }
             nav {
-                height: 60px;
+                height: auto;
+                padding: 15px 5%;
+                flex-direction: column;
+                gap: 12px;
                 justify-content: center;
             }
             nav .nav-logo {
-                display: none; /* Auto-collapse branding on mobile for links readability */
+                font-size: 16px;
             }
             nav .nav-links {
-                gap: 12px;
+                gap: 10px;
                 width: 100%;
                 justify-content: center;
                 flex-wrap: wrap;
             }
             nav .nav-links a {
-                font-size: 12px;
+                font-size: 11px;
             }
             header {
-                min-height: 65vh;
-                padding-top: 20px;
+                min-height: 60vh;
+                padding: 40px 15px 20px 15px;
+            }
+            header h1 {
+                font-size: 36px;
+            }
+            header p {
+                font-size: 14px;
             }
             .hero-buttons {
                 width: 100%;
                 flex-direction: column;
-                gap: 12px;
+                gap: 10px;
             }
             .btn {
                 width: 100%;
+                padding: 10px 20px;
+                font-size: 14px;
             }
             .hr-quick-stats {
                 padding: 0 5%;
-                gap: 15px;
+                gap: 12px;
             }
             .stat-box {
                 min-width: 100%;
+                padding: 15px;
             }
             .media-card, .activity-box {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
-                gap: 20px;
+                gap: 15px;
             }
             .media-meta {
                 justify-content: center;
                 flex-direction: column;
-                gap: 8px;
+                gap: 6px;
             }
             .doc-btn {
                 width: 100%;
@@ -697,6 +710,7 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
             <li><a href="#certifications">Certifications</a></li>
             <li><a href="#activities">Activities</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -723,8 +737,8 @@
             <p>Core Engineering Focus</p>
         </div>
         <div class="stat-box">
-            <h4>6+</h4>
-            <p>Global Certifications</p>
+            <h4>9+</h4>
+            <p>Verified Credentials</p>
         </div>
     </div>
 
@@ -849,45 +863,9 @@
         <div id="project-container" class="cards-grid"></div>
     </section>
 
-    <section id="certifications">
-        <h2>Professional Certifications & Highlights</h2>
+    <section id="achievements">
+        <h2>Key Achievements & Rewards</h2>
         <div class="cards-grid">
-
-            <div class="glass-card media-card">
-                <div class="pdf-placeholder">PDF<span>IITK</span></div>
-                <div class="media-info">
-                    <h3>Data Structures and Algorithms</h3>
-                    <p>E & ICT Academy, IIT Kanpur. Rigorous engineering student development track covering performance optimizations.</p>
-                    <div class="media-meta">
-                        <span class="media-date">July 2025</span>
-                        <a href="DSA.pdf" target="_blank" class="doc-btn">View PDF</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="glass-card media-card">
-                <div class="pdf-placeholder">PDF<span>IITK</span></div>
-                <div class="media-info">
-                    <h3>Full Stack Web Development</h3>
-                    <p>E & ICT Academy, IIT Kanpur. In-depth professional development program covering comprehensive full-stack workflows.</p>
-                    <div class="media-meta">
-                        <span class="media-date">August 2025</span>
-                        <a href="FSD.pdf" target="_blank" class="doc-btn">View PDF</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="glass-card media-card">
-                <div class="pdf-placeholder">PDF<span>INFY</span></div>
-                <div class="media-info">
-                    <h3>DSA using Java</h3>
-                    <p>Infosys Springboard. Verified course credential demonstrating object-oriented algorithms design implementations in Java.</p>
-                    <div class="media-meta">
-                        <span class="media-date">May 2025</span>
-                        <a href="DSA with Java- Infosys.pdf" target="_blank" class="doc-btn">View PDF</a>
-                    </div>
-                </div>
-            </div>
 
             <div class="glass-card media-card">
                 <div class="media-preview-container">
@@ -895,9 +873,9 @@
                 </div>
                 <div class="media-info">
                     <h3>🏆 Student of Semester (Grade A+)</h3>
-                    <p>Awarded by Corporate Skill Development Centre (CSDC), GNIOT for absolute academic excellence during 5th Semester.</p>
+                    <p>Awarded by Corporate Skill Development Centre (CSDC), GNIOT for absolute academic excellence and core engineering supremacy during 5th Semester.</p>
                     <div class="media-meta">
-                        <span class="media-date">June 2025</span>
+                        <span class="media-date">CSDC GNIOT</span>
                         <a href="Student Of Semester - CSDC.jpeg" target="_blank" class="doc-btn">View Image</a>
                     </div>
                 </div>
@@ -909,10 +887,103 @@
                 </div>
                 <div class="media-info">
                     <h3>Hackathon: The Techclasher</h3>
-                    <p>Successfully competed in the grand IT Hackathon event organized by GNIOT Engineering College with Team Webhackthon.</p>
+                    <p>Competed alongside Team Webhackthon inside the grand institutional engineering hackathon event to design system prototypes.</p>
                     <div class="media-meta">
-                        <span class="media-date">October 2025</span>
+                        <span class="media-date">GNIOT IT Event</span>
                         <a href="Techclasher Hackathon.jpeg" target="_blank" class="doc-btn">View Image</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card media-card">
+                <div class="pdf-placeholder">PDF<span>TVS</span></div>
+                <div class="media-info">
+                    <h3>TVS Credit EPIC Hackathon</h3>
+                    <p>Corporate national analytics hackathon tracker credentials evaluating algorithm scalability blueprints under active stress testing parameters.</p>
+                    <div class="media-meta">
+                        <span class="media-date">TVS Corporate</span>
+                        <a href="TVS Hackathon.pdf" target="_blank" class="doc-btn">View PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card media-card">
+                <div class="media-preview-container">
+                    <img src="React Bootcamp.jpeg" alt="React Bootcamp">
+                </div>
+                <div class="media-info">
+                    <h3>Advanced React UI Bootcamp</h3>
+                    <p>Verified specialization bootcamp credential covering frontend state hooks lifecycle context flows, fiber DOM tree updates, and single page web rendering.</p>
+                    <div class="media-meta">
+                        <span class="media-date">UI Bootcamp</span>
+                        <a href="React Bootcamp.jpeg" target="_blank" class="doc-btn">View Image</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2>Professional Certifications</h2>
+        <div class="cards-grid">
+
+            <div class="glass-card media-card">
+                <div class="pdf-placeholder">PDF<span>IITK</span></div>
+                <div class="media-info">
+                    <h3>Data Structures and Algorithms</h3>
+                    <p>E & ICT Academy, IIT Kanpur. Cover algorithms complexity and architectural memory runtime efficiency optimization tracks.</p>
+                    <div class="media-meta">
+                        <span class="media-date">IIT Kanpur</span>
+                        <a href="DSA.pdf" target="_blank" class="doc-btn">View PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card media-card">
+                <div class="pdf-placeholder">PDF<span>IITK</span></div>
+                <div class="media-info">
+                    <h3>Full Stack Web Development</h3>
+                    <p>E & ICT Academy, IIT Kanpur. Professional training track certifying rigorous end-to-end cloud database application layers mapping.</p>
+                    <div class="media-meta">
+                        <span class="media-date">IIT Kanpur</span>
+                        <a href="FSD.pdf" target="_blank" class="doc-btn">View PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card media-card">
+                <div class="pdf-placeholder">PDF<span>INFY</span></div>
+                <div class="media-info">
+                    <h3>DSA using Java</h3>
+                    <p>Infosys Springboard. Verified professional skill standard detailing robust object-oriented implementations of algorithmic paradigms.</p>
+                    <div class="media-meta">
+                        <span class="media-date">Infosys</span>
+                        <a href="DSA with Java- Infosys.pdf" target="_blank" class="doc-btn">View PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card media-card">
+                <div class="pdf-placeholder">PDF<span>SQL</span></div>
+                <div class="media-info">
+                    <h3>SQL Database Development</h3>
+                    <p>Simplilearn System Certification. Covering advanced query structuring, normalization indices, and database performance metrics.</p>
+                    <div class="media-meta">
+                        <span class="media-date">Simplilearn</span>
+                        <a href="SQL- simplilearn.pdf" target="_blank" class="doc-btn">View PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card media-card">
+                <div class="pdf-placeholder">PDF<span>C++</span></div>
+                <div class="media-info">
+                    <h3>C & C++ Programming</h3>
+                    <p>Core systems foundation benchmark establishing memory pointer controls, bitwise structure algorithms, and computational flow basics.</p>
+                    <div class="media-meta">
+                        <span class="media-date">Systems Code</span>
+                        <a href="C & C++ Programming.pdf" target="_blank" class="doc-btn">View PDF</a>
                     </div>
                 </div>
             </div>
@@ -965,7 +1036,7 @@
     <script>
         const projects = [
             {
-                name: "🎙px Multimedia Analytics Platform",
+                name: "🎙️ Multimedia Analytics Platform",
                 description: "Full-stack application processing PDFs, audio, and video transcripts (Whisper), with indexing and intelligent RAG chat workflows utilizing FAISS vector searching.",
                 link: "https://github.com/tripathihimanshu252",
                 category: "ai",
