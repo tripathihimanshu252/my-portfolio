@@ -76,7 +76,7 @@
             border: 2px solid var(--bg-main);
         }
 
-        /* ULTRA-PREMIUM INTERACTIVE GLASS NAVBAR */
+        /* ULTRA-PREMIUM INTERACTIVE GLASS NAVBAR WITH SAFE PADDING FOR HAMBURGER */
         nav {
             position: fixed;
             top: 20px;
@@ -93,7 +93,7 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            padding: 0 40px;
+            padding: 0 30px; /* Safe inset indent padding from borders */
             z-index: 1000;
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.1);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -104,7 +104,7 @@
             box-shadow: 0 0 35px rgba(6, 182, 212, 0.25);
         }
 
-        /* 3-LINE HAMBURGER MENU BUTTON */
+        /* FIXED HAMBURGER POSITIONING INSIDE PILL */
         .menu-toggle {
             display: flex;
             flex-direction: column;
@@ -113,7 +113,8 @@
             z-index: 1100;
             background: none;
             border: none;
-            padding: 5px;
+            padding: 10px;
+            margin-right: 5px; /* Keeps it perfectly safe inside the curved bar */
         }
         .menu-toggle span {
             display: block;
@@ -131,7 +132,7 @@
             right: -320px;
             width: 320px;
             height: 100vh;
-            background: rgba(15, 23, 42, 0.88);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(40px);
             -webkit-backdrop-filter: blur(40px);
             border-left: 1px solid rgba(255, 255, 255, 0.08);
@@ -223,7 +224,7 @@
             flex-shrink: 0;
         }
 
-        /* FIXED MERN BLOCK GRID TO SECURE THE LETTER M */
+        /* STRICT MOBILE RESILIENT SQUARE MERN FRAMEWORK (M AND CORNERS FIX) */
         .mern-brand-wrapper {
             position: relative;
             width: 160px;
@@ -242,7 +243,7 @@
         .mern-brand-img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: contain; /* Prevents overflow cropping of letters */
             border-radius: 14px;
             background-color: #0c111d;
             display: block;
@@ -756,7 +757,7 @@
         }
 
         /* EXTRA ACTIVITY DATA LAYOUT */
-        .activity-box {
+        .glass-card .activity-box {
             display: flex;
             gap: 25px;
             align-items: center;
@@ -848,21 +849,26 @@
         @keyframes loopTrack { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         @keyframes slideInText { 0% { opacity: 0; transform: translateX(-20px); } 100% { opacity: 1; transform: translateX(0); } }
 
-        /* FLUID ACCESSIBLE RESPONSIVENESS LAYOUT GRAPHICS */
+        /* FIXED FLUID MOBILE RESPONSIVENESS AND SPACE INSETS */
         @media (max-width: 912px) {
             nav { width: 92%; padding: 0 25px; }
             .exp-main-box { flex-direction: column; }
             .exp-certificate-sidebar { width: 100%; padding: 25px; }
         }
         @media (max-width: 768px) {
-            body { padding-top: 150px; }
-            nav { height: 60px; padding: 0 15px; border-radius: 50px; width: 92%; top: 15px; }
-            header { flex-direction: column; text-align: center; gap: 40px; min-height: auto; padding: 30px 10px; }
-            .hero-layout-box { flex-direction: column-reverse; text-align: center; gap: 25px; }
-            .hero-left-content { text-align: center; }
+            body { padding-top: 130px; }
+            nav { height: 60px; padding: 0 20px; border-radius: 50px; width: 92%; top: 15px; }
+            header { flex-direction: column; text-align: center; gap: 35px; min-height: auto; padding: 20px 10px; }
+            .hero-layout-box { flex-direction: column-reverse; text-align: center; gap: 30px; width: 100%; }
+            .hero-left-content { text-align: center; width: 100%; }
             .hero-left-content h1 { font-size: 38px; }
-            .mern-brand-wrapper { width: 140px; height: 140px; border-radius: 15px; }
-            .hero-buttons { width: 100%; flex-direction: column; gap: 10px; justify-content: center; }
+            
+            /* SECURES IMAGE TO FIT FLAT INSIDE THE GRID WITHOUT OVERFLOWING OUT OF MOBILE EDGES */
+            .hero-right-brand { width: 100%; display: flex; justify-content: center; }
+            .mern-brand-wrapper { width: 150px; height: 150px; border-radius: 16px; margin: 0 auto; box-shadow: 0 0 25px rgba(6, 182, 212, 0.4); }
+            .mern-brand-img { width: 100%; height: 100%; object-fit: contain; border-radius: 14px; }
+            
+            .hero-buttons { width: 100%; flex-direction: column; gap: 12px; justify-content: center; }
             .btn { width: 100%; }
             .stat-box { min-width: 100%; padding: 20px 15px; }
             .media-card, .activity-box { flex-direction: column; text-align: center; gap: 15px; }
@@ -875,9 +881,11 @@
 </head>
 <body>
 
+    <!-- LIGHTING BACKGROUND LAYERS -->
     <div class="ambient-orb orb-1"></div>
     <div class="ambient-orb orb-2"></div>
 
+    <!-- MAIN COMPACT GLASS NAVIGATION MENU -->
     <nav>
         <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Navigation">
             <span></span>
@@ -886,6 +894,7 @@
         </button>
     </nav>
 
+    <!-- EXPANDABLE SIDEBAR COMPONENT PANEL -->
     <div class="sidebar" id="nav-sidebar">
         <div class="nav-links">
             <a href="#about" onclick="toggleSidebar()">About</a>
@@ -899,6 +908,7 @@
         </div>
     </div>
 
+    <!-- CORE HERO VIEW DISPLAY DUAL LAYERING -->
     <header class="reveal-element">
         <div class="hero-layout-box">
             <div class="hero-left-content">
@@ -917,11 +927,14 @@
         </div>
     </header>
 
+    <!-- INFINITE AUTOMATED TRACKER MARQUEE LOOP FOR CORE LANGUAGES -->
     <div class="marquee-container reveal-element">
         <div class="marquee-track" id="marquee-track-render">
-            </div>
+            <!-- Rendered automatically via Script engine logic -->
+        </div>
     </div>
 
+    <!-- METRICS MONITOR LAYER STATS BOXES -->
     <div class="hr-quick-stats reveal-element">
         <div class="stat-box">
             <h4>18+</h4>
@@ -937,19 +950,21 @@
         </div>
     </div>
 
+    <!-- ABOUT SECTION -->
     <section id="about" class="reveal-element slide-title-effect">
         <h2>About Me</h2>
         <div class="glass-card">
             <p style="font-size: 15px; line-height: 1.8; color: #cbd5e1; text-align: justify;">
                 I am a business-focused computer science engineering Graduate specializing in 
-                <strong>Artificial Intelligence and Data Science</strong> from Greater Noida Institute of Technology [cite: 13, 14, 54] with a final CGPA of <strong>7.76</strong>. 
-                My core professional focus is completely locked onto advanced full-stack web engineering, leveraging the MERN architecture to build production-grade web frameworks, async multi-thread API controllers, and secure user data streams[cite: 4, 5, 44, 45]. 
-                With practical corporate development internship exposure under my belt [cite: 18, 62], I focus heavily on solid software engineering principles—optimizing relational/non-relational database queries, managing transactional Redis cache layers, and handling containerized environments deployment pipelines[cite: 10, 11, 20, 50, 51, 52]. 
-                As a natural extension to my core development systems, I selectively integrate secondary system configurations and data-driven intelligence features to maximize cloud infrastructure capabilities and application performance[cite: 6, 11, 46, 52].
+                <strong>Artificial Intelligence and Data Science</strong> from Greater Noida Institute of Technology with a final CGPA of <strong>7.76</strong>. 
+                My core professional focus is completely locked onto advanced full-stack web engineering, leveraging the MERN architecture to build production-grade web frameworks, async multi-thread API controllers, and secure user data streams. 
+                With practical corporate development internship exposure under my belt, I focus heavily on solid software engineering principles—optimizing relational/non-relational database queries, managing transactional Redis cache layers, and handling containerized environments deployment pipelines. 
+                As a natural extension to my core development systems, I selectively integrate secondary system configurations and data-driven intelligence features to maximize cloud infrastructure capabilities and application performance.
             </p>
         </div>
     </section>
 
+    <!-- SKILLS LAYER CONFIGURATION CELLS -->
     <section id="skills" class="reveal-element slide-title-effect">
         <h2>Skills & Tooling</h2>
         <div class="glass-card skills-grid">
@@ -1016,6 +1031,7 @@
         </div>
     </section>
 
+    <!-- INTEGRATED EXPERIENCE RECORDS -->
     <section id="experience" class="reveal-element slide-title-effect">
         <h2>Experience & Corporate Training</h2>
         <div class="glass-card experience">
@@ -1029,23 +1045,24 @@
                         <div class="exp-date">Nov 2025 – May 2026</div>
                     </div>
                     <ul>
-                        <li>Architected, developed, and maintained custom responsive web applications under industry agile environments[cite: 18, 19, 62, 63].</li>
-                        <li>Leveraged full-stack MERN technologies to deliver fast, clean, and highly secure web operations[cite: 18, 19, 62, 63].</li>
-                        <li>Collaborated intensely within corporate project modules to integrate client-facing designs with strong server APIs[cite: 20, 64].</li>
-                        <li>Conducted systematic debugging, continuous integration testing, and proactive peer code reviews to maximize stability[cite: 21, 65].</li>
+                        <li>Architected, developed, and maintained custom responsive web applications under industry agile environments.</li>
+                        <li>Leveraged full-stack MERN technologies to deliver fast, clean, and highly secure web operations.</li>
+                        <li>Collaborated intensely within corporate project modules to integrate client-facing designs with strong server APIs.</li>
+                        <li>Conducted systematic debugging, continuous integration testing, and proactive peer code reviews to maximize stability.</li>
                     </ul>
                 </div>
                 
                 <div class="exp-certificate-sidebar">
                     <div class="pdf-placeholder" style="margin-bottom: 15px;">PDF<span>AGR</span></div>
                     <h4 style="font-size: 14px; margin-bottom: 6px; color: white;">Tenure Certificate</h4>
-                    <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 15px;">Verified internship completion record issued by Agratas.</p>
+                    <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 20px;">Verified internship completion record issued by Agratas.</p>
                     <a href="intern_may.pdf" target="_blank" class="doc-btn" style="width: 100%; text-align: center;">View Certificate</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- RUNTIME DATA FILTERABLE INJECTED PROJECTS -->
     <section id="projects" class="reveal-element slide-title-effect">
         <h2>Featured Projects</h2>
         
@@ -1058,6 +1075,7 @@
         <div id="project-container" class="cards-grid"></div>
     </section>
 
+    <!-- KEY LOG RECORD REWARDS -->
     <section id="achievements" class="reveal-element slide-title-effect">
         <h2>Key Achievements & Rewards</h2>
         <div class="cards-grid">
@@ -1068,7 +1086,7 @@
                 </div>
                 <div class="media-info">
                     <h3>🏆 Student of Semester (Grade A+)</h3>
-                    <p>Awarded by Corporate Skill Development Centre (CSDC), GNIOT for absolute academic excellence and core engineering supremacy during 5th Semester[cite: 36, 87].</p>
+                    <p>Awarded by Corporate Skill Development Centre (CSDC), GNIOT for absolute academic excellence and core engineering supremacy during 5th Semester.</p>
                     <div class="media-meta">
                         <span class="media-date" style="font-weight: 700; color: var(--purple-laser);">CSDC GNIOT</span>
                         <a href="Student Of Semester - CSDC.jpeg" target="_blank" class="doc-btn">View Image</a>
@@ -1082,7 +1100,7 @@
                 </div>
                 <div class="media-info">
                     <h3>Hackathon: The Techclasher</h3>
-                    <p>Competed alongside Team Webhackthon inside the grand institutional engineering hackathon event to design system prototypes[cite: 40, 91].</p>
+                    <p>Competed alongside Team Webhackthon inside the grand institutional engineering hackathon event to design system prototypes.</p>
                     <div class="media-meta">
                         <span class="media-date" style="font-weight: 700; color: var(--purple-laser);">GNIOT IT Event</span>
                         <a href="Techclasher Hackathon.jpeg" target="_blank" class="doc-btn">View Image</a>
@@ -1119,6 +1137,7 @@
         </div>
     </section>
 
+    <!-- COMPREHENSIVE REPOSITORY CERTIFICATIONS -->
     <section id="certifications" class="reveal-element slide-title-effect">
         <h2>Professional Certifications</h2>
         <div class="cards-grid">
@@ -1127,7 +1146,7 @@
                 <div class="pdf-placeholder">PDF<span>IITK</span></div>
                 <div class="media-info">
                     <h3>Data Structures and Algorithms</h3>
-                    <p>E & ICT Academy, IIT Kanpur. Cover algorithms complexity and architectural memory runtime efficiency optimization tracks[cite: 34, 85].</p>
+                    <p>E & ICT Academy, IIT Kanpur. Cover algorithms complexity and architectural memory runtime efficiency optimization tracks.</p>
                     <div class="media-meta">
                         <span class="media-date" style="font-weight: 700; color: var(--purple-laser);">IIT Kanpur</span>
                         <a href="DSA.pdf" target="_blank" class="doc-btn">View PDF</a>
@@ -1139,7 +1158,7 @@
                 <div class="pdf-placeholder">PDF<span>IITK</span></div>
                 <div class="media-info">
                     <h3>Full Stack Web Development</h3>
-                    <p>E & ICT Academy, IIT Kanpur. Professional training track certifying rigorous end-to-end cloud database application layers mapping[cite: 35, 87].</p>
+                    <p>E & ICT Academy, IIT Kanpur. Professional training track certifying rigorous end-to-end cloud database application layers mapping.</p>
                     <div class="media-meta">
                         <span class="media-date" style="font-weight: 700; color: var(--purple-laser);">IIT Kanpur</span>
                         <a href="FSD.pdf" target="_blank" class="doc-btn">View PDF</a>
@@ -1151,7 +1170,7 @@
                 <div class="pdf-placeholder">PDF<span>INFY</span></div>
                 <div class="media-info">
                     <h3>DSA using Java</h3>
-                    <p>Infosys Springboard. Verified professional skill standard detailing robust object-oriented implementations of algorithmic paradigms[cite: 34, 85].</p>
+                    <p>Infosys Springboard. Verified professional skill standard detailing robust object-oriented implementations of algorithmic paradigms.</p>
                     <div class="media-meta">
                         <span class="media-date" style="font-weight: 700; color: var(--purple-laser);">Infosys</span>
                         <a href="DSA with Java- Infosys.pdf" target="_blank" class="doc-btn">View PDF</a>
@@ -1163,7 +1182,7 @@
                 <div class="pdf-placeholder">PDF<span>SQL</span></div>
                 <div class="media-info">
                     <h3>SQL Database Development</h3>
-                    <p>Simplilearn System Certification. Covering advanced query structuring, normalization indices, and database performance metrics[cite: 34, 86].</p>
+                    <p>Simplilearn System Certification. Covering advanced query structuring, normalization indices, and database performance metrics.</p>
                     <div class="media-meta">
                         <span class="media-date" style="font-weight: 700; color: var(--purple-laser);">Simplilearn</span>
                         <a href="SQL- simplilearn.pdf" target="_blank" class="doc-btn">View PDF</a>
@@ -1175,7 +1194,7 @@
                 <div class="pdf-placeholder">PDF<span>C++</span></div>
                 <div class="media-info">
                     <h3>C & C++ Programming</h3>
-                    <p>Core systems foundation benchmark establishing memory pointer controls, bitwise structure algorithms, and computational flow basics[cite: 37, 88].</p>
+                    <p>Core systems foundation benchmark establishing memory pointer controls, bitwise structure algorithms, and computational flow basics.</p>
                     <div class="media-meta">
                         <span class="media-date" style="font-weight: 700; color: var(--purple-laser);">Systems Code</span>
                         <a href="C & C++ Programming.pdf" target="_blank" class="doc-btn">View PDF</a>
@@ -1186,18 +1205,20 @@
         </div>
     </section>
 
+    <!-- DEPARTMENT OPERATIONS MODULE -->
     <section id="activities" class="reveal-element slide-title-effect">
         <h2>Extracurricular Activities</h2>
         <div class="glass-card activity-box">
             <div class="activity-icon">🏆</div>
             <div class="activity-details">
                 <h3>Student Coordinator – Sports Event</h3>
-                <p style="color: var(--neon-cyan); font-weight: 600; font-size: 15px; margin-bottom: 8px;">AI & DS Department, GNIOT [cite: 39, 90]</p>
-                <p>Represented the AI & DS department inside <strong>Spardha</strong> (The Annual Sports Meet). Successfully steered operational team collaborations, managed scheduling frameworks, and fostered elite collective alignment across technical branches[cite: 40, 91].</p>
+                <p style="color: var(--neon-cyan); font-weight: 600; font-size: 15px; margin-bottom: 8px;">AI & DS Department, GNIOT</p>
+                <p>Represented the AI & DS department inside <strong>Spardha</strong> (The Annual Sports Meet). Successfully steered operational team collaborations, managed scheduling frameworks, and fostered elite collective alignment across technical branches.</p>
             </div>
         </div>
     </section>
 
+    <!-- DOCUMENT ACCESS PORT PANEL (ATS COMPLIANT DOWNLOAD) -->
     <section class="resume-download-section reveal-element">
         <div class="resume-container-box">
             <h3 style="font-size: 24px; font-weight: 800; color: white;">Looking for the Offline Document?</h3>
@@ -1206,18 +1227,19 @@
         </div>
     </section>
 
+    <!-- SECURE API GATEWAY CHANNELS CONTACT -->
     <section id="contact" class="reveal-element slide-title-effect">
         <h2>Get In Touch</h2>
         <div class="glass-card contact-grid">
             <div class="contact-item">
                 <div class="icon">📧</div>
                 <h4>Email</h4>
-                <a href="mailto:tripathihimanshu252@gmail.com [cite: 2, 42]">tripathihimanshu252@gmail.com</a>
+                <a href="mailto:tripathihimanshu252@gmail.com">tripathihimanshu252@gmail.com</a>
             </div>
             <div class="contact-item">
                 <div class="icon">📱</div>
                 <h4>Mobile</h4>
-                <a href="tel:+919696247847 [cite: 2, 42]">+91 9696247847</a>
+                <a href="tel:+919696247847">+91 9696247847</a>
             </div>
             <div class="contact-item">
                 <div class="icon">💻</div>
@@ -1236,11 +1258,12 @@
         <p>Designed with <span>❤️</span> by Himanshu Tripathi &copy; 2026. All Rights Reserved.</p>
     </footer>
 
+    <!-- RUNTIME ARRAY DISPATCH CONTROLLER SCRIPT -->
     <script>
         const projects = [
             {
                 name: "🏨 RoomIt – Meeting Room Booking System",
-                description: "Enterprise-grade booking engine addressing concurrency race conditions. Implements strict atomic slot operations, database-level transactions, and server-time refund windows[cite: 68, 71, 72].",
+                description: "Enterprise-grade booking engine addressing concurrency race conditions. Implements strict atomic slot operations, database-level transactions, and server-time refund windows.",
                 link: "https://github.com/tripathihimanshu252",
                 category: "mern",
                 tags: ["Next.js", "MongoDB", "Concurrency Lock", "Atomic Ops"]
@@ -1275,7 +1298,7 @@
             },
             {
                 name: "🍳 Recipe Recommendation System",
-                description: "Modern, responsive React dynamic application integrated seamlessly with third-party REST APIs via Axios to parse data dynamically[cite: 79, 81].",
+                description: "Modern, responsive React dynamic application integrated seamlessly with third-party REST APIs via Axios to parse data dynamically.",
                 link: "https://recipicks.vercel.app/",
                 category: "mern",
                 tags: ["React", "API", "Bootstrap"]
@@ -1303,14 +1326,14 @@
             },
             {
                 name: "Personal Finance Tracker",
-                description: "Secure asset management tracking system engineered with continuous state verification, JWT Auth, and Redis caching[cite: 25, 74, 77].",
+                description: "Secure asset management tracking system engineered with continuous state verification, JWT Auth, and Redis caching.",
                 link: "https://personal-finance-tracker-oe9z14y8n-himahsu-23s-projects.vercel.app/",
                 category: "mern",
                 tags: ["Redis", "PostgreSQL", "MERN"]
             },
             {
                 name: "Advanced Voice Assistant",
-                description: "System engineering voice execution pipelines running hands-free commands using MERN stack and Web Speech systems[cite: 28, 29].",
+                description: "System engineering voice execution pipelines running hands-free commands using MERN stack and Web Speech systems.",
                 link: "https://github.com/tripathihimanshu252/Advanced-voice-assistant-using-mern",
                 category: "ai",
                 tags: ["Web Speech API", "Gemini API", "Node.js"]
