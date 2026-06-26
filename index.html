@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Himanshu Tripathi | Portfolio</title>
     <style>
-        /* LUXURY CYBERPUNK & FUTURE AI THEME DESIGN */
+        /* EXTRA ADVANCED CYBERPUNK SOFTWARE ENGINEERING INFRASTRUCTURE */
         :root {
             --bg-main: #030712;
-            --bg-surface: rgba(17, 24, 39, 0.45);
-            --border-neon: rgba(56, 189, 248, 0.15);
+            --bg-surface: rgba(17, 24, 39, 0.55);
+            --border-neon: rgba(56, 189, 248, 0.2);
             --electric-blue: #2563eb;
             --neon-cyan: #06b6d4;
             --neon-glow: #38bdf8;
@@ -33,34 +33,34 @@
             color: var(--text-primary);
             overflow-x: hidden;
             position: relative;
-            padding-top: 80px;
+            padding-top: 100px;
         }
 
-        /* LIGHTING BACKGROUND ORBS (CHAMAKTE HUYE BACKGROUND GOLE) */
-        body::before {
-            content: '';
+        /* LIVE MATRIX-STYLE BACKGROUND PARTICLES */
+        .ambient-orb {
             position: absolute;
-            width: 500px;
-            height: 500px;
-            top: 10%;
-            left: -15%;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.18) 0%, transparent 70%);
             border-radius: 50%;
-            z-index: -1;
+            filter: blur(120px);
+            z-index: -2;
             pointer-events: none;
+            animation: floatingOrbs 10s ease-in-out infinite alternate;
+        }
+        
+        .orb-1 {
+            width: 350px;
+            height: 350px;
+            top: 5%;
+            left: -10%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
         }
 
-        body::after {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            bottom: 15%;
-            right: -15%;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            z-index: -1;
-            pointer-events: none;
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            bottom: 10%;
+            right: -10%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+            animation-delay: 2s;
         }
 
         /* CUSTOM GLOWING SCROLLBAR */
@@ -76,134 +76,222 @@
             border: 2px solid var(--bg-main);
         }
 
-        /* PREMIUM GLASS NAVIGATION BAR */
+        /* ULTRA-PREMIUM INTERACTIVE GLASS NAVBAR */
         nav {
             position: fixed;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 85%;
+            width: 90%;
             max-width: 1200px;
-            height: 65px;
-            background: rgba(17, 24, 39, 0.6);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 50px;
+            height: 70px;
+            background: rgba(9, 13, 22, 0.65);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 100px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
-            padding: 0 35px;
+            padding: 0 40px;
             z-index: 1000;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            transition: all 0.4s ease;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         nav:hover {
-            border-color: rgba(56, 189, 248, 0.3);
-            box-shadow: 0 10px 40px rgba(37, 99, 235, 0.15);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 35px rgba(6, 182, 212, 0.25);
         }
 
-        nav .nav-logo {
-            font-size: 20px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(to right, #ffffff, var(--neon-cyan), var(--purple-laser));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-        }
-
-        nav .nav-links {
+        /* 3-LINE HAMBURGER MENU BUTTON */
+        .menu-toggle {
             display: flex;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1100;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+        .menu-toggle span {
+            display: block;
+            width: 26px;
+            height: 3px;
+            background: linear-gradient(to right, var(--neon-cyan), var(--purple-laser));
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* SLIDE-IN RECRUITER GLASS SIDEBAR PANEL */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 320px;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.7);
+            z-index: 1050;
+            display: flex;
+            flex-direction: column;
+            padding: 100px 40px;
+            gap: 25px;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .sidebar-active {
+            right: 0 !important;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
             gap: 25px;
             list-style: none;
         }
 
-        nav .nav-links a {
+        .nav-links a {
             text-decoration: none;
             color: var(--text-secondary);
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.3s;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all 0.3s ease;
             position: relative;
+            display: block;
         }
 
-        nav .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--neon-cyan);
-            transition: width 0.3s;
-        }
-
-        nav .nav-links a:hover {
+        .nav-links a:hover {
             color: white;
-            text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+            text-shadow: 0 0 12px rgba(56, 189, 248, 0.7);
+            transform: translateX(5px);
         }
 
-        nav .nav-links a:hover::after {
-            width: 100%;
+        /* SCROLL-REVEAL SYSTEM ENGINE ANIMATION */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* ADVANCED HERO DESIGN */
+        .reveal-element.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* TITLES SLIDING TEXT EFFECT */
+        .slide-title-effect h2 {
+            position: relative;
+            animation: slideInText 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* HERO LAYERING ARCHITECTURE */
         header {
-            min-height: 75vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 80px 20px 40px 20px;
+            padding: 60px 20px 40px 20px;
+            position: relative;
         }
 
-        header h1 {
+        /* DANCING CYBERPUNK MERN BRAND SETUP */
+        .hero-layout-box {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .hero-left-content {
+            flex: 1;
+        }
+
+        .hero-right-brand {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        /* FIXED MERN BLOCK GRID TO SECURE THE LETTER M */
+        .mern-brand-wrapper {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            border-radius: 16px;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--purple-laser), var(--pink-accent));
+            box-shadow: 0 0 35px rgba(6, 182, 212, 0.25);
+            transition: transform 0.3s ease;
+        }
+
+        .mern-brand-wrapper:hover {
+            transform: scale(1.05);
+        }
+
+        .mern-brand-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 14px;
+            background-color: #0c111d;
+            display: block;
+        }
+
+        .hero-left-content h1 {
             font-size: clamp(45px, 7vw, 80px);
             font-weight: 900;
             letter-spacing: -2px;
-            line-height: 1.1;
+            line-height: 1.05;
             background: linear-gradient(to right, #ffffff, #67e8f9, #c084fc, #f472b6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-            animation: textGlow 3s ease-in-out infinite alternate;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 30px rgba(6, 182, 212, 0.15));
         }
 
-        header p {
-            font-size: clamp(18px, 2.5vw, 24px);
+        .hero-left-content p {
+            font-size: clamp(18px, 2.6vw, 24px);
             color: var(--text-secondary);
-            max-width: 850px;
             margin-bottom: 40px;
             line-height: 1.6;
+            min-height: 42px;
         }
 
-        header p span {
-            background: linear-gradient(to right, var(--neon-cyan), var(--neon-glow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
+        #typing-text {
+            color: var(--neon-glow);
+            font-weight: 800;
+            border-right: 3px solid var(--neon-cyan);
+            padding-right: 6px;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+            animation: cursorPulse 0.8s step-end infinite;
         }
 
-        /* ADVANCED DYNAMIC GLASS BUTTONS */
+        /* PRODUCTION CORE BUTTONS */
         .hero-buttons {
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
-            justify-content: center;
         }
 
         .btn {
             text-decoration: none;
-            padding: 14px 36px;
+            padding: 15px 40px;
             font-size: 15px;
             font-weight: 700;
-            border-radius: 50px;
+            border-radius: 100px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-            overflow: hidden;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -212,53 +300,62 @@
         .btn-primary {
             background: linear-gradient(135deg, var(--electric-blue), var(--purple-laser));
             color: white;
-            box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 35px rgba(37, 99, 235, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 40px rgba(37, 99, 235, 0.6), 0 0 15px var(--purple-laser);
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 0 45px rgba(37, 99, 235, 0.7), 0 0 20px var(--purple-laser);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.03);
-            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-main);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.07);
             border-color: var(--neon-glow);
-            transform: translateY(-3px);
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
         }
 
-        /* STANDALONE DOWNLOAD CTA SECTION */
-        .resume-download-section {
-            padding: 40px 10%;
-            text-align: center;
-            max-width: 1400px;
-            margin: 0 auto;
+        /* INFINITE RUNTIME TECH MARQUEE FLOW */
+        .marquee-container {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.4);
+            border-top: 1px solid var(--border-neon);
+            border-bottom: 1px solid var(--border-neon);
+            padding: 22px 0;
+            overflow: hidden;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
         }
-        .resume-container-box {
-            background: linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(31, 41, 55, 0.4));
-            border: 1px solid rgba(139, 92, 246, 0.25);
-            padding: 40px 30px;
-            border-radius: 24px;
+
+        .marquee-track {
             display: flex;
-            flex-direction: column;
+            width: max-content;
+            gap: 60px;
+            animation: loopTrack 26s linear infinite;
+        }
+
+        .marquee-item {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 20px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-            transition: border 0.3s;
+            gap: 12px;
+            transition: color 0.3s;
         }
-        .resume-container-box:hover {
-            border-color: var(--pink-accent);
-            box-shadow: 0 0 35px rgba(236, 72, 153, 0.15);
-        }
+        .marquee-item span { color: var(--neon-cyan); }
+        .marquee-item:hover { color: white; text-shadow: 0 0 15px var(--neon-glow); }
 
         /* NEON HR STATS GRID */
         .hr-quick-stats {
@@ -268,74 +365,54 @@
             align-items: center;
             flex-wrap: wrap;
             max-width: 1100px;
-            margin: 0 auto 60px auto;
+            margin: 0 auto 80px auto;
             padding: 0 5%;
         }
 
         .stat-box {
-            background: linear-gradient(135deg, rgba(17, 24, 39, 0.6), rgba(31, 41, 55, 0.3));
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.7), rgba(31, 41, 55, 0.35));
             border: 1px solid var(--border-neon);
-            padding: 30px 20px;
-            border-radius: 20px;
+            padding: 35px 25px;
+            border-radius: 24px;
             text-align: center;
-            min-width: 240px;
+            min-width: 250px;
             flex: 1;
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .stat-box:hover {
             border-color: var(--purple-laser);
-            box-shadow: inset 0 0 20px rgba(139, 92, 246, 0.1), 0 10px 30px rgba(0, 0, 0, 0.4);
-            transform: scale(1.03);
+            box-shadow: inset 0 0 25px rgba(139, 92, 246, 0.15), 0 15px 40px rgba(0, 0, 0, 0.5);
+            transform: translateY(-5px) scale(1.03);
         }
 
         .stat-box h4 {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 800;
             background: linear-gradient(to right, var(--neon-cyan), var(--purple-laser));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* PROJECT FILTERING TABS UPGRADED */
-        .filter-container {
-            display: flex;
-            justify-content: flex-start;
-            gap: 12px;
-            margin-bottom: 35px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            color: var(--text-secondary);
-            padding: 8px 24px;
-            border-radius: 30px;
+        .stat-box p {
             font-size: 13px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            color: var(--text-secondary);
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .filter-btn.active, .filter-btn:hover {
-            background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(37, 99, 235, 0.15));
-            border-color: var(--neon-glow);
-            color: white;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
-        }
-
-        /* SECTION COMMON STYLES */
+        /* REVOLUTIONARY CARD ARCHITECTURE */
         section {
-            padding: 90px 10% 30px 10%;
+            padding: 100px 10% 40px 10%;
             max-width: 1400px;
             margin: 0 auto;
         }
 
         h2 {
-            font-size: 36px;
+            font-size: 38px;
             font-weight: 800;
-            margin-bottom: 45px;
+            margin-bottom: 50px;
             position: relative;
             display: inline-block;
             letter-spacing: -1px;
@@ -347,105 +424,66 @@
         h2::after {
             content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: -10px;
             left: 0;
-            width: 55px;
+            width: 60px;
             height: 4px;
             background: linear-gradient(to right, var(--neon-cyan), var(--purple-laser));
-            border-radius: 10px;
+            border-radius: 20px;
         }
 
-        /* REVOLUTIONARY GLASSMORPHISM CARD DESIGN */
         .glass-card {
             background: var(--bg-surface);
             border: 1px solid var(--border-neon);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 24px;
-            padding: 35px;
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 28px;
+            padding: 40px;
             position: relative;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .glass-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.03) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
         .glass-card:hover {
-            border-color: rgba(56, 189, 248, 0.4);
-            transform: translateY(-6px) scale(1.01);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(37, 99, 235, 0.1);
+            border-color: rgba(56, 189, 248, 0.45);
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(37, 99, 235, 0.15);
         }
 
-        /* SKILLS STYLING UPGRADED */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .skill-category {
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            padding: 25px;
-            border-radius: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .skill-category:hover {
-            background: rgba(255, 255, 255, 0.03);
-            border-color: rgba(139, 92, 246, 0.2);
-        }
-
-        .skill-category h3 {
-            font-size: 19px;
-            color: var(--neon-cyan);
-            margin-bottom: 20px;
-            font-weight: 700;
-            letter-spacing: -0.3px;
-        }
-
-        .skill-tags {
+        /* PROJECT CONTROLLER LABELS GRID */
+        .filter-container {
             display: flex;
+            justify-content: flex-start;
+            gap: 15px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
-            gap: 12px;
         }
 
-        .skill-badge {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 10px 20px;
-            border-radius: 12px;
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            color: var(--text-secondary);
+            padding: 10px 28px;
+            border-radius: 100px;
             font-size: 14px;
-            color: #cbd5e1;
-            font-weight: 500;
+            font-weight: 700;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        .skill-badge:hover {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(139, 92, 246, 0.15));
+        .filter-btn.active, .filter-btn:hover {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.18), rgba(37, 99, 235, 0.18));
             border-color: var(--neon-glow);
             color: white;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
-            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
         }
 
-        /* GRID FOR COMPONENT CARDS */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 30px;
         }
 
-        /* FEATURED PROJECTS GLOW CARDS */
         .project-card {
             display: flex;
             flex-direction: column;
@@ -453,10 +491,9 @@
         }
 
         .project-card h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
+            font-size: 24px;
             color: white;
-            letter-spacing: -0.5px;
+            margin-bottom: 12px;
         }
 
         .project-card p {
@@ -464,7 +501,7 @@
             font-size: 14px;
             line-height: 1.7;
             margin-bottom: 25px;
-            min-height: 70px;
+            min-height: 75px;
         }
 
         .project-meta-tags {
@@ -498,7 +535,59 @@
 
         .project-link:hover {
             color: white;
-            transform: translateX(5px);
+            transform: translateX(6px);
+        }
+
+        /* TECH SKILLS DISPLAY CELLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category h3 {
+            font-size: 20px;
+            color: var(--neon-cyan);
+            margin-bottom: 22px;
+            font-weight: 700;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-badge {
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 12px 22px;
+            border-radius: 14px;
+            font-size: 14px;
+            color: #cbd5e1;
+            font-weight: 600;
+            animation: dynamicFloat 4s ease-in-out infinite alternate;
+        }
+
+        .skill-badge:nth-child(even) {
+            animation-duration: 5.5s;
+            animation-delay: 0.4s;
+        }
+
+        .skill-badge:hover {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(139, 92, 246, 0.2));
+            border-color: var(--neon-glow);
+            color: white;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+            transform: translateY(-5px) scale(1.06) !important;
         }
 
         /* INTEGRATED EXPERIENCE PANEL DESIGN */
@@ -525,7 +614,7 @@
         }
 
         .exp-role h3 {
-            font-size: 26px;
+            font-size: 28px;
             color: white;
             font-weight: 800;
         }
@@ -533,8 +622,8 @@
         .exp-role p {
             color: var(--neon-cyan);
             font-weight: 600;
-            margin-top: 4px;
-            font-size: 18px;
+            margin-top: 5px;
+            font-size: 19px;
         }
 
         .exp-date {
@@ -549,8 +638,8 @@
         }
 
         .exp-certificate-sidebar {
-            width: 280px;
-            background: rgba(10, 15, 30, 0.7);
+            width: 290px;
+            background: rgba(10, 15, 30, 0.75);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             padding: 30px 20px;
@@ -573,7 +662,7 @@
             margin-bottom: 12px;
         }
 
-        /* PREMIUM DUAL COMPONENT MEDIA LAYOUTS */
+        /* PREMIUM COMPONENT MEDIA ATTACHMENTS LAYOUTS */
         .media-card {
             display: flex;
             gap: 25px;
@@ -588,19 +677,18 @@
             font-size: 26px;
             color: #f87171;
             font-weight: 800;
-            border: 2px dashed rgba(239, 68, 68, 0.3);
+            border: 2px dashed rgba(239, 68, 68, 0.35);
             width: 100px;
             height: 100px;
             flex-shrink: 0;
-            border-radius: 16px;
+            border-radius: 18px;
             background: #0b0f19;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
         .pdf-placeholder span {
             font-size: 11px;
             color: var(--text-secondary);
             margin-top: 5px;
-            letter-spacing: 0.5px;
         }
 
         .media-preview-container {
@@ -608,10 +696,10 @@
             height: 100px;
             flex-shrink: 0;
             overflow: hidden;
-            border-radius: 16px;
+            border-radius: 18px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             background: #0b0f19;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
 
         .media-preview-container img {
@@ -627,7 +715,7 @@
         }
 
         .media-info h3 {
-            font-size: 19px;
+            font-size: 20px;
             color: white;
             margin-bottom: 6px;
             font-weight: 700;
@@ -654,7 +742,7 @@
             font-weight: 700;
             color: white;
             background: linear-gradient(135deg, var(--electric-blue), #1d4ed8);
-            padding: 8px 18px;
+            padding: 8px 20px;
             border-radius: 10px;
             transition: all 0.3s;
             display: inline-block;
@@ -664,26 +752,52 @@
         .doc-btn:hover {
             background: linear-gradient(135deg, var(--neon-cyan), var(--electric-blue));
             transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4);
+            box-shadow: 0 4px 22px rgba(6, 182, 212, 0.45);
         }
 
-        /* ACTIVITY INFRASTRUCTURE STYLING */
+        /* EXTRA ACTIVITY DATA LAYOUT */
         .activity-box {
             display: flex;
             gap: 25px;
             align-items: center;
         }
         .activity-icon {
-            font-size: 40px;
-            background: rgba(16, 185, 129, 0.08);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            padding: 18px;
-            border-radius: 20px;
+            font-size: 42px;
+            background: rgba(16, 185, 129, 0.09);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            padding: 20px;
+            border-radius: 22px;
             color: var(--emerald-glow);
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
         }
 
-        /* HIGH-END CONTACT PATTERN GRID */
+        .activity-details h3 { font-size: 20px; color: white; margin-bottom: 4px; }
+        .activity-details p { color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
+
+        /* ATS OPTIMIZED RESUME BOTTOM PANEL DOWNLOADING CELL */
+        .resume-download-section {
+            padding: 40px 10%;
+            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .resume-container-box {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(31, 41, 55, 0.4));
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            padding: 40px 30px;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+        .resume-container-box:hover {
+            border-color: var(--pink-accent);
+            box-shadow: 0 0 35px rgba(236, 72, 153, 0.15);
+        }
+
+        /* CONTACT NETWORK GRID PANELS */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -692,8 +806,8 @@
 
         .contact-item {
             text-align: center;
-            padding: 30px 20px;
-            border-radius: 20px;
+            padding: 35px 20px;
+            border-radius: 22px;
             background: rgba(255,255,255,0.01);
             border: 1px solid rgba(255,255,255,0.03);
             transition: all 0.3s;
@@ -702,37 +816,19 @@
         .contact-item:hover {
             background: rgba(255,255,255,0.03);
             border-color: var(--neon-cyan);
-            transform: scale(1.04);
+            transform: scale(1.05);
         }
 
         .contact-item .icon {
-            font-size: 32px;
+            font-size: 34px;
             margin-bottom: 12px;
             filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.4));
         }
 
-        .contact-item h4 {
-            font-size: 16px;
-            margin-bottom: 8px;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+        .contact-item h4 { font-size: 16px; margin-bottom: 8px; color: var(--text-secondary); text-transform: uppercase; }
+        .contact-item a { color: var(--neon-glow); text-decoration: none; font-weight: 700; font-size: 16px; word-break: break-all; }
 
-        .contact-item a {
-            color: var(--neon-glow);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
-            word-break: break-all;
-            transition: color 0.3s;
-        }
-
-        .contact-item a:hover {
-            color: white;
-        }
-
-        /* PREMIUM UNIQUE FOOTER */
+        /* UNIQUE FOOTER FRAMEWORK */
         footer {
             text-align: center;
             padding: 50px 20px;
@@ -741,75 +837,94 @@
             font-size: 14px;
             background: #050811;
         }
+        footer p span { color: var(--pink-accent); animation: scaleHeart 1.5s infinite; display: inline-block; }
 
-        footer p span {
-            color: var(--pink-accent);
-            animation: pulse 1.5s infinite;
-            display: inline-block;
-        }
+        /* THEME ANIMATIONS */
+        @keyframes textGlow { 0% { filter: drop-shadow(0 0 15px rgba(103, 232, 249, 0.2)); } 100% { filter: drop-shadow(0 0 25px rgba(192, 132, 252, 0.4)); } }
+        @keyframes scaleHeart { 0% { transform: scale(1); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+        @keyframes cursorPulse { from, to { border-color: transparent } 50% { border-color: var(--neon-cyan); } }
+        @keyframes dynamicFloat { 0% { transform: translateY(0); } 100% { transform: translateY(-7px); } }
+        @keyframes floatingOrbs { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(20px, -15px) scale(1.02); } }
+        @keyframes loopTrack { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        @keyframes slideInText { 0% { opacity: 0; transform: translateX(-20px); } 100% { opacity: 1; transform: translateX(0); } }
 
-        @keyframes textGlow {
-            0% { filter: drop-shadow(0 0 15px rgba(103, 232, 249, 0.2)); }
-            100% { filter: drop-shadow(0 0 25px rgba(192, 132, 252, 0.4)); }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-
-        /* RESPONSIVENESS MEDIA MODIFICATIONS */
+        /* FLUID ACCESSIBLE RESPONSIVENESS LAYOUT GRAPHICS */
         @media (max-width: 912px) {
-            nav { width: 92%; padding: 0 20px; }
+            nav { width: 92%; padding: 0 25px; }
             .exp-main-box { flex-direction: column; }
-            .exp-certificate-sidebar { width: 100%; padding: 30px; }
+            .exp-certificate-sidebar { width: 100%; padding: 25px; }
         }
-
         @media (max-width: 768px) {
-            body { padding-top: 140px; }
-            nav { height: auto; top: 15px; border-radius: 24px; padding: 15px; flex-direction: column; gap: 15px; }
-            nav .nav-links { gap: 15px; justify-content: center; flex-wrap: wrap; }
-            header { min-height: 55vh; padding: 40px 10px; }
-            header h1 { font-size: 40px; }
-            header p { font-size: 15px; }
-            .hero-buttons { width: 100%; flex-direction: column; }
+            body { padding-top: 150px; }
+            nav { height: 60px; padding: 0 15px; border-radius: 50px; width: 92%; top: 15px; }
+            header { flex-direction: column; text-align: center; gap: 40px; min-height: auto; padding: 30px 10px; }
+            .hero-layout-box { flex-direction: column-reverse; text-align: center; gap: 25px; }
+            .hero-left-content { text-align: center; }
+            .hero-left-content h1 { font-size: 38px; }
+            .mern-brand-wrapper { width: 140px; height: 140px; border-radius: 15px; }
+            .hero-buttons { width: 100%; flex-direction: column; gap: 10px; justify-content: center; }
             .btn { width: 100%; }
-            .stat-box { min-width: 100%; }
-            .media-card, .activity-box { flex-direction: column; text-align: center; }
+            .stat-box { min-width: 100%; padding: 20px 15px; }
+            .media-card, .activity-box { flex-direction: column; text-align: center; gap: 15px; }
             .media-meta { justify-content: center; flex-direction: column; gap: 10px; }
             .doc-btn { width: 100%; }
+            section { padding: 60px 5% 20px 5%; }
+            h2 { font-size: 28px; margin-bottom: 30px; }
         }
     </style>
 </head>
 <body>
 
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+
     <nav>
-        <a href="#" class="nav-logo">Himanshu Tripathi</a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#activities">Activities</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 
-    <header>
-        <h1>Himanshu Tripathi</h1>
-        <p><span>Full Stack Developer (MERN & AI)</span> | Building Web Architectures using MERN & AI/ML Features</p>
-        <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary">Contact Me</a>
-            <a href="./himanshu_resume_v9.pdf" target="_blank" class="btn btn-secondary">👁️ View Resume</a>
+    <div class="sidebar" id="nav-sidebar">
+        <div class="nav-links">
+            <a href="#about" onclick="toggleSidebar()">About</a>
+            <a href="#skills" onclick="toggleSidebar()">Skills</a>
+            <a href="#experience" onclick="toggleSidebar()">Experience</a>
+            <a href="#projects" onclick="toggleSidebar()">Projects</a>
+            <a href="#achievements" onclick="toggleSidebar()">Achievements</a>
+            <a href="#certifications" onclick="toggleSidebar()">Certifications</a>
+            <a href="#activities" onclick="toggleSidebar()">Activities</a>
+            <a href="#contact" onclick="toggleSidebar()">Contact</a>
+        </div>
+    </div>
+
+    <header class="reveal-element">
+        <div class="hero-layout-box">
+            <div class="hero-left-content">
+                <h1>Himanshu Tripathi</h1>
+                <p>I build engineering systems as a <span id="typing-text"></span></p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Contact Me</a>
+                    <a href="./himanshu_resume_v9.pdf" target="_blank" class="btn btn-secondary">👁️ View Resume</a>
+                </div>
+            </div>
+            <div class="hero-right-brand">
+                <div class="mern-brand-wrapper">
+                    <img src="logo_mern.jpg" alt="MERN Stack Architecture Brand" class="mern-brand-img">
+                </div>
+            </div>
         </div>
     </header>
 
-    <div class="hr-quick-stats">
+    <div class="marquee-container reveal-element">
+        <div class="marquee-track" id="marquee-track-render">
+            </div>
+    </div>
+
+    <div class="hr-quick-stats reveal-element">
         <div class="stat-box">
-            <h4>11+</h4>
+            <h4>18+</h4>
             <p>Applications Developed</p>
         </div>
         <div class="stat-box" style="border-color: rgba(139, 92, 246, 0.3);">
@@ -817,25 +932,25 @@
             <p>Core Engineering Focus</p>
         </div>
         <div class="stat-box">
-            <h4>9+</h4>
+            <h4>16+</h4>
             <p>Verified Credentials</p>
         </div>
     </div>
 
-    <section id="about">
+    <section id="about" class="reveal-element slide-title-effect">
         <h2>About Me</h2>
         <div class="glass-card">
-            <p style="font-size: 16px; line-height: 1.9; color: #cbd5e1; text-align: justify;">
-                I am a business-focused computer science engineering student specializing in 
-                <strong>Artificial Intelligence and Data Science</strong> at Greater Noida Institute of Technology[cite: 91]. 
-                My core professional focus is completely locked onto advanced full-stack web engineering, leveraging the MERN architecture to build production-grade web frameworks, async multi-thread API controllers, and secure user data streams[cite: 121, 122]. 
-                With practical corporate development internship exposure under my belt [cite: 139], I focus heavily on solid software engineering principles—optimizing relational/non-relational database queries, managing transactional Redis cache layers, and handling containerized environments deployment pipelines[cite: 128, 129, 143]. 
-                As a natural extension to my core development systems, I selectively integrate secondary system configurations and data-driven intelligence features to maximize cloud infrastructure capabilities and application performance[cite: 123].
+            <p style="font-size: 15px; line-height: 1.8; color: #cbd5e1; text-align: justify;">
+                I am a business-focused computer science engineering Graduate specializing in 
+                <strong>Artificial Intelligence and Data Science</strong> from Greater Noida Institute of Technology [cite: 13, 14, 54] with a final CGPA of <strong>7.76</strong>. 
+                My core professional focus is completely locked onto advanced full-stack web engineering, leveraging the MERN architecture to build production-grade web frameworks, async multi-thread API controllers, and secure user data streams[cite: 4, 5, 44, 45]. 
+                With practical corporate development internship exposure under my belt [cite: 18, 62], I focus heavily on solid software engineering principles—optimizing relational/non-relational database queries, managing transactional Redis cache layers, and handling containerized environments deployment pipelines[cite: 10, 11, 20, 50, 51, 52]. 
+                As a natural extension to my core development systems, I selectively integrate secondary system configurations and data-driven intelligence features to maximize cloud infrastructure capabilities and application performance[cite: 6, 11, 46, 52].
             </p>
         </div>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="reveal-element slide-title-effect">
         <h2>Skills & Tooling</h2>
         <div class="glass-card skills-grid">
             <div class="skill-category">
@@ -901,7 +1016,7 @@
         </div>
     </section>
 
-    <section id="experience">
+    <section id="experience" class="reveal-element slide-title-effect">
         <h2>Experience & Corporate Training</h2>
         <div class="glass-card experience">
             <div class="exp-main-box">
@@ -914,24 +1029,24 @@
                         <div class="exp-date">Nov 2025 – May 2026</div>
                     </div>
                     <ul>
-                        <li>Architected, developed, and maintained custom responsive web applications under industry agile environments[cite: 139, 140].</li>
-                        <li>Leveraged full-stack MERN technologies to deliver fast, clean, and highly secure web operations[cite: 139, 141].</li>
-                        <li>Collaborated intensely within corporate project modules to integrate client-facing designs with strong server APIs[cite: 141].</li>
-                        <li>Conducted systematic debugging, continuous integration testing, and proactive peer code reviews to maximize stability[cite: 142].</li>
+                        <li>Architected, developed, and maintained custom responsive web applications under industry agile environments[cite: 18, 19, 62, 63].</li>
+                        <li>Leveraged full-stack MERN technologies to deliver fast, clean, and highly secure web operations[cite: 18, 19, 62, 63].</li>
+                        <li>Collaborated intensely within corporate project modules to integrate client-facing designs with strong server APIs[cite: 20, 64].</li>
+                        <li>Conducted systematic debugging, continuous integration testing, and proactive peer code reviews to maximize stability[cite: 21, 65].</li>
                     </ul>
                 </div>
                 
                 <div class="exp-certificate-sidebar">
                     <div class="pdf-placeholder" style="margin-bottom: 15px;">PDF<span>AGR</span></div>
-                    <h4 style="font-size: 15px; margin-bottom: 8px; color: white;">Tenure Certificate</h4>
-                    <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 20px;">Verified internship completion record issued by Agratas.</p>
+                    <h4 style="font-size: 14px; margin-bottom: 6px; color: white;">Tenure Certificate</h4>
+                    <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 15px;">Verified internship completion record issued by Agratas.</p>
                     <a href="intern_may.pdf" target="_blank" class="doc-btn" style="width: 100%; text-align: center;">View Certificate</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="reveal-element slide-title-effect">
         <h2>Featured Projects</h2>
         
         <div class="filter-container">
@@ -943,7 +1058,7 @@
         <div id="project-container" class="cards-grid"></div>
     </section>
 
-    <section id="achievements">
+    <section id="achievements" class="reveal-element slide-title-effect">
         <h2>Key Achievements & Rewards</h2>
         <div class="cards-grid">
 
@@ -953,7 +1068,7 @@
                 </div>
                 <div class="media-info">
                     <h3>🏆 Student of Semester (Grade A+)</h3>
-                    <p>Awarded by Corporate Skill Development Centre (CSDC), GNIOT for absolute academic excellence and core engineering supremacy during 5th Semester.</p>
+                    <p>Awarded by Corporate Skill Development Centre (CSDC), GNIOT for absolute academic excellence and core engineering supremacy during 5th Semester[cite: 36, 87].</p>
                     <div class="media-meta">
                         <span class="media-date" style="font-weight: 700; color: var(--purple-laser);">CSDC GNIOT</span>
                         <a href="Student Of Semester - CSDC.jpeg" target="_blank" class="doc-btn">View Image</a>
@@ -967,7 +1082,7 @@
                 </div>
                 <div class="media-info">
                     <h3>Hackathon: The Techclasher</h3>
-                    <p>Competed alongside Team Webhackthon inside the grand institutional engineering hackathon event to design system prototypes.</p>
+                    <p>Competed alongside Team Webhackthon inside the grand institutional engineering hackathon event to design system prototypes[cite: 40, 91].</p>
                     <div class="media-meta">
                         <span class="media-date" style="font-weight: 700; color: var(--purple-laser);">GNIOT IT Event</span>
                         <a href="Techclasher Hackathon.jpeg" target="_blank" class="doc-btn">View Image</a>
@@ -979,7 +1094,7 @@
                 <div class="pdf-placeholder">PDF<span>TVS</span></div>
                 <div class="media-info">
                     <h3>TVS Credit EPIC Hackathon</h3>
-                    <p>Corporate national AI & analytics hackathon tracker credentials evaluating algorithm scalability blueprints under active stress testing parameters[cite: 73].</p>
+                    <p>Corporate national AI & analytics hackathon tracker credentials evaluating algorithm scalability blueprints under active stress testing parameters.</p>
                     <div class="media-meta">
                         <span class="media-date" style="font-weight: 700; color: var(--purple-laser);">TVS Corporate</span>
                         <a href="TVS Hackathon.pdf" target="_blank" class="doc-btn">View PDF</a>
@@ -1004,7 +1119,7 @@
         </div>
     </section>
 
-    <section id="certifications">
+    <section id="certifications" class="reveal-element slide-title-effect">
         <h2>Professional Certifications</h2>
         <div class="cards-grid">
 
@@ -1012,7 +1127,7 @@
                 <div class="pdf-placeholder">PDF<span>IITK</span></div>
                 <div class="media-info">
                     <h3>Data Structures and Algorithms</h3>
-                    <p>E & ICT Academy, IIT Kanpur. Cover algorithms complexity and architectural memory runtime efficiency optimization tracks[cite: 36].</p>
+                    <p>E & ICT Academy, IIT Kanpur. Cover algorithms complexity and architectural memory runtime efficiency optimization tracks[cite: 34, 85].</p>
                     <div class="media-meta">
                         <span class="media-date" style="font-weight: 700; color: var(--purple-laser);">IIT Kanpur</span>
                         <a href="DSA.pdf" target="_blank" class="doc-btn">View PDF</a>
@@ -1024,7 +1139,7 @@
                 <div class="pdf-placeholder">PDF<span>IITK</span></div>
                 <div class="media-info">
                     <h3>Full Stack Web Development</h3>
-                    <p>E & ICT Academy, IIT Kanpur. Professional training track certifying rigorous end-to-end cloud database application layers mapping[cite: 49].</p>
+                    <p>E & ICT Academy, IIT Kanpur. Professional training track certifying rigorous end-to-end cloud database application layers mapping[cite: 35, 87].</p>
                     <div class="media-meta">
                         <span class="media-date" style="font-weight: 700; color: var(--purple-laser);">IIT Kanpur</span>
                         <a href="FSD.pdf" target="_blank" class="doc-btn">View PDF</a>
@@ -1036,7 +1151,7 @@
                 <div class="pdf-placeholder">PDF<span>INFY</span></div>
                 <div class="media-info">
                     <h3>DSA using Java</h3>
-                    <p>Infosys Springboard. Verified professional skill standard detailing robust object-oriented implementations of algorithmic paradigms[cite: 20].</p>
+                    <p>Infosys Springboard. Verified professional skill standard detailing robust object-oriented implementations of algorithmic paradigms[cite: 34, 85].</p>
                     <div class="media-meta">
                         <span class="media-date" style="font-weight: 700; color: var(--purple-laser);">Infosys</span>
                         <a href="DSA with Java- Infosys.pdf" target="_blank" class="doc-btn">View PDF</a>
@@ -1048,7 +1163,7 @@
                 <div class="pdf-placeholder">PDF<span>SQL</span></div>
                 <div class="media-info">
                     <h3>SQL Database Development</h3>
-                    <p>Simplilearn System Certification. Covering advanced query structuring, normalization indices, and database performance metrics[cite: 58, 59].</p>
+                    <p>Simplilearn System Certification. Covering advanced query structuring, normalization indices, and database performance metrics[cite: 34, 86].</p>
                     <div class="media-meta">
                         <span class="media-date" style="font-weight: 700; color: var(--purple-laser);">Simplilearn</span>
                         <a href="SQL- simplilearn.pdf" target="_blank" class="doc-btn">View PDF</a>
@@ -1060,7 +1175,7 @@
                 <div class="pdf-placeholder">PDF<span>C++</span></div>
                 <div class="media-info">
                     <h3>C & C++ Programming</h3>
-                    <p>Core systems foundation benchmark establishing memory pointer controls, bitwise structure algorithms, and computational flow basics[cite: 11].</p>
+                    <p>Core systems foundation benchmark establishing memory pointer controls, bitwise structure algorithms, and computational flow basics[cite: 37, 88].</p>
                     <div class="media-meta">
                         <span class="media-date" style="font-weight: 700; color: var(--purple-laser);">Systems Code</span>
                         <a href="C & C++ Programming.pdf" target="_blank" class="doc-btn">View PDF</a>
@@ -1071,19 +1186,19 @@
         </div>
     </section>
 
-    <section id="activities">
+    <section id="activities" class="reveal-element slide-title-effect">
         <h2>Extracurricular Activities</h2>
         <div class="glass-card activity-box">
             <div class="activity-icon">🏆</div>
             <div class="activity-details">
                 <h3>Student Coordinator – Sports Event</h3>
-                <p style="color: var(--neon-cyan); font-weight: 600; font-size: 15px; margin-bottom: 8px;">AI & DS Department, GNIOT</p>
-                <p>Represented the AI & DS department inside <strong>Spardha</strong> (The Annual Sports Meet). Successfully steered operational team collaborations, managed scheduling frameworks, and fostered elite collective alignment across technical branches.</p>
+                <p style="color: var(--neon-cyan); font-weight: 600; font-size: 15px; margin-bottom: 8px;">AI & DS Department, GNIOT [cite: 39, 90]</p>
+                <p>Represented the AI & DS department inside <strong>Spardha</strong> (The Annual Sports Meet). Successfully steered operational team collaborations, managed scheduling frameworks, and fostered elite collective alignment across technical branches[cite: 40, 91].</p>
             </div>
         </div>
     </section>
 
-    <section class="resume-download-section">
+    <section class="resume-download-section reveal-element">
         <div class="resume-container-box">
             <h3 style="font-size: 24px; font-weight: 800; color: white;">Looking for the Offline Document?</h3>
             <p style="color: var(--text-secondary); font-size: 15px; max-width: 600px;">Get access to the absolute comprehensive, production-ready, engineering standard resume format directly optimized for corporate ATS pipelines.</p>
@@ -1091,18 +1206,18 @@
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="reveal-element slide-title-effect">
         <h2>Get In Touch</h2>
         <div class="glass-card contact-grid">
             <div class="contact-item">
                 <div class="icon">📧</div>
                 <h4>Email</h4>
-                <a href="mailto:tripathihimanshu252@gmail.com">tripathihimanshu252@gmail.com</a>
+                <a href="mailto:tripathihimanshu252@gmail.com [cite: 2, 42]">tripathihimanshu252@gmail.com</a>
             </div>
             <div class="contact-item">
                 <div class="icon">📱</div>
                 <h4>Mobile</h4>
-                <a href="tel:+919696247847">+91 9696247847</a>
+                <a href="tel:+919696247847 [cite: 2, 42]">+91 9696247847</a>
             </div>
             <div class="contact-item">
                 <div class="icon">💻</div>
@@ -1125,7 +1240,7 @@
         const projects = [
             {
                 name: "🏨 RoomIt – Meeting Room Booking System",
-                description: "Enterprise-grade booking engine addressing concurrency race conditions. Implements strict atomic slot operations, database-level transactions, and server-time refund windows[cite: 145].",
+                description: "Enterprise-grade booking engine addressing concurrency race conditions. Implements strict atomic slot operations, database-level transactions, and server-time refund windows[cite: 68, 71, 72].",
                 link: "https://github.com/tripathihimanshu252",
                 category: "mern",
                 tags: ["Next.js", "MongoDB", "Concurrency Lock", "Atomic Ops"]
@@ -1160,7 +1275,7 @@
             },
             {
                 name: "🍳 Recipe Recommendation System",
-                description: "Modern, responsive React dynamic application integrated seamlessly with third-party REST APIs via Axios to parse data dynamically[cite: 156, 157].",
+                description: "Modern, responsive React dynamic application integrated seamlessly with third-party REST APIs via Axios to parse data dynamically[cite: 79, 81].",
                 link: "https://recipicks.vercel.app/",
                 category: "mern",
                 tags: ["React", "API", "Bootstrap"]
@@ -1188,14 +1303,14 @@
             },
             {
                 name: "Personal Finance Tracker",
-                description: "Secure asset management tracking system engineered with continuous state verification, JWT Auth, and Redis caching[cite: 151, 152].",
+                description: "Secure asset management tracking system engineered with continuous state verification, JWT Auth, and Redis caching[cite: 25, 74, 77].",
                 link: "https://personal-finance-tracker-oe9z14y8n-himahsu-23s-projects.vercel.app/",
                 category: "mern",
                 tags: ["Redis", "PostgreSQL", "MERN"]
             },
             {
                 name: "Advanced Voice Assistant",
-                description: "System engineering voice execution pipelines running hands-free commands using MERN stack and Web Speech systems.",
+                description: "System engineering voice execution pipelines running hands-free commands using MERN stack and Web Speech systems[cite: 28, 29].",
                 link: "https://github.com/tripathihimanshu252/Advanced-voice-assistant-using-mern",
                 category: "ai",
                 tags: ["Web Speech API", "Gemini API", "Node.js"]
@@ -1208,7 +1323,7 @@
             data.forEach(project => {
                 let tagsHTML = project.tags.map(t => `<span class="project-tag">${t}</span>`).join('');
                 container.innerHTML += `
-                    <div class="glass-card project-card">
+                    <div class="glass-card project-card reveal-element">
                         <div>
                             <h3>${project.name}</h3>
                             <div class="project-meta-tags">${tagsHTML}</div>
@@ -1218,15 +1333,13 @@
                     </div>
                 `;
             });
+            setTimeout(scrollReveal, 100);
         }
 
         function filterProjects(e, cat) {
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
-            
-            if (e && e.target) {
-                e.target.classList.add('active');
-            }
+            if (e && e.target) e.target.classList.add('active');
 
             if(cat === 'all') {
                 renderProjects(projects);
@@ -1236,7 +1349,69 @@
             }
         }
 
-        // Run Deployment
+        /* TRANSITION SCROLL LOGIC */
+        function scrollReveal() {
+            const revealElements = document.querySelectorAll('.reveal-element');
+            const windowHeight = window.innerHeight;
+            
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 50) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        /* AUTOTYPING INTERACTIVE CORE ENGINE */
+        const words = ["Full Stack MERN Developer.", "AI System Architect.", "Creative Software Engineer."];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingText = document.getElementById('typing-text');
+
+        function type() {
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                typingText.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+            if (!isDeleting && charIndex === currentWord.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typeSpeed = 500;
+            }
+            setTimeout(type, typeSpeed);
+        }
+
+        /* RUNTIME MARQUEE LOOPER DISPATCHER (CONTINUOUS MOVEMENT) */
+        const techSkillsList = ["Core Java", "Python Engine", "C / C++ Infrastructure", "Docker Pipelines", "Redis Caching", "Nodemailer Automation", "MERN Stack Layer", "SQL Optimization", "FAISS Vector Search"];
+        const trackContainer = document.getElementById('marquee-track-render');
+        
+        function initMarqueeTrack() {
+            const formattedItems = techSkillsList.map(item => `<div class="marquee-item"><span>&lt;/&gt;</span> ${item}</div>`).join('');
+            trackContainer.innerHTML = formattedItems + formattedItems;
+        }
+
+        /* SIDEBAR HANDLER LAYERS */
+        function toggleSidebar() {
+            document.getElementById('nav-sidebar').classList.toggle('sidebar-active');
+        }
+
+        // Initialize Engine
+        window.addEventListener('scroll', scrollReveal);
+        window.addEventListener('load', () => {
+            scrollReveal();
+            initMarqueeTrack();
+            setTimeout(type, 1000);
+        });
         renderProjects(projects);
     </script>
 </body>
